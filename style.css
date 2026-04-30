@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: var(--cor-de-fundo);
+    background:url('img/dark-red-burgundy-roses-dazzling-260nw-2759894461.webp') ;
     color: var(--branco);
     font-family: "Chakra Petch", sans-serif;
 }
