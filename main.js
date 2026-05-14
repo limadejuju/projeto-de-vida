@@ -1,7 +1,6 @@
 const botoes = document.querySelectorAll(".botao");
 const textos = document.querySelectorAll(".aba-conteudo");
 
-// Lógica das Abas
 for (let i = 0; i < botoes.length; i++) {
     botoes[i].onclick = function () {
         for (let j = 0; j < botoes.length; j++) {
@@ -13,7 +12,6 @@ for (let i = 0; i < botoes.length; i++) {
     }
 }
 
-// Lógica do Cronômetro
 const contadores = document.querySelectorAll(".contador");
 
 const tempoObjetivo1 = new Date("2032-04-25T00:00:00");
