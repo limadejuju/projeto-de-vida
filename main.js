@@ -1,9 +1,9 @@
 const botoes = document.querySelectorAll(".botao");
 const textos = document.querySelectorAll(".aba-conteudo");
 
+// Lógica das Abas
 for (let i = 0; i < botoes.length; i++) {
     botoes[i].onclick = function () {
-
         for (let j = 0; j < botoes.length; j++) {
             botoes[j].classList.remove("ativo");
             textos[j].classList.remove("ativo");
@@ -13,6 +13,7 @@ for (let i = 0; i < botoes.length; i++) {
     }
 }
 
+// Lógica do Cronômetro
 const contadores = document.querySelectorAll(".contador");
 
 const tempoObjetivo1 = new Date("2032-04-25T00:00:00");
@@ -34,23 +35,24 @@ function calculaTempo(tempoObjetivo) {
     segundos %= 60;
     minutos %= 60;
     horas %= 24;
+
     if (tempoFinal > 0){
         return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
     } else {
-     return "prazo Finalizado";
+        return "Prazo Finalizado";
     }
-    
 }
 
 function atualizaCronometro() {
-    for (let i = 0; i < consetInterval(atualizaCronometro, 1000);tadores.length; i++) {
+    // Corrigido: Removido o setInterval intruso de dentro do nome da variável
+    for (let i = 0; i < contadores.length; i++) {
         contadores[i].textContent = calculaTempo(tempos[i]);
     }
 }
 
 function comecaCronometro(){
-    atualizaCronometro();
-    setInterval(atualizaCronometro, 1000);
+    atualizaCronometro(); // Chama a primeira vez imediatamente
+    setInterval(atualizaCronometro, 1000); // Atualiza a cada 1 segundo
 }
 
 comecaCronometro();
