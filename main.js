@@ -42,7 +42,7 @@ function calculaTempo(tempoObjetivo) {
 }
 
 function atualizaCronometro() {
-    // Corrigido: Removido o setInterval intruso de dentro do nome da variável
+    
     for (let i = 0; i < contadores.length; i++) {
         contadores[i].textContent = calculaTempo(tempos[i]);
     }
